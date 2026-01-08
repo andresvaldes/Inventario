@@ -3,12 +3,24 @@
  */
 package inventario;
 
+import java.util.Scanner;
+
 public class App {
-    public String getGreeting() {
-        return "Esto es una prueba";
+    public String getGreeting(String nombre) {
+        return "Hola " + nombre + ". Esto es una prueba";
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        Scanner lector = new Scanner(System.in);
+
+        // Pedimos el nombre
+        System.out.print("Por favor, ingresa tu nombre: ");
+        String nombre = lector.nextLine();
+
+        // Imprimimos solo la línea solicitada
+        App miApp = new App();
+        System.out.println(miApp.getGreeting(nombre));
+
+        lector.close();
     }
 }

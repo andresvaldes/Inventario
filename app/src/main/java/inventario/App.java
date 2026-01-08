@@ -5,7 +5,7 @@ package inventario;
 
 public class App {
     public String getGreeting() {
-        return "Hello World!";
+        return "Esto es una prueba";
     }
 
     public static void main(String[] args) {

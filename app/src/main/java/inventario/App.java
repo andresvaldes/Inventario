@@ -6,20 +6,22 @@ package inventario;
 import java.util.Scanner;
 
 public class App {
-    public String getGreeting(String nombre) {
-        return "Hola " + nombre + ". Esto es una prueba";
-    }
-
     public static void main(String[] args) {
         Scanner lector = new Scanner(System.in);
 
-        // Pedimos el nombre
+        // 1. Pedir el nombre
         System.out.print("Por favor, ingresa tu nombre: ");
         String nombre = lector.nextLine();
 
-        // Imprimimos solo la línea solicitada
-        App miApp = new App();
-        System.out.println(miApp.getGreeting(nombre));
+        // 2. Pedir el año de nacimiento
+        System.out.print("Ingresa tu año de nacimiento: ");
+        int anioNacimiento = lector.nextInt();
+
+        // 3. Calcular la edad
+        int edad = 2026 - anioNacimiento;
+
+        // 4. Mostrar el resultado final
+        System.out.println("Hola " + nombre + ". Tienes " + edad + " años. Esto es una prueba");
 
         lector.close();
     }

@@ -13,14 +13,23 @@ public class App {
         System.out.print("Por favor, ingresa tu nombre: ");
         String nombre = lector.nextLine();
 
-        // 2. Pedir el año de nacimiento
-        System.out.print("Ingresa tu año de nacimiento: ");
-        int anioNacimiento = lector.nextInt();
+        int edad = -1; // Iniciamos con un valor fuera de rango para que entre al bucle
 
-        // 3. Calcular la edad
-        int edad = 2026 - anioNacimiento;
+        // 2. Bucle para pedir y validar la edad
+        while (edad < 0 || edad > 100) {
+            System.out.print("Ingresa tu año de nacimiento: ");
+            int anioNacimiento = lector.nextInt();
+            
+            // Calculamos la edad
+            edad = 2026 - anioNacimiento;
 
-        // 4. Mostrar el resultado final
+            // Verificación del rango
+            if (edad < 0 || edad > 100) {
+                System.out.println("Edad fuera de rango. Intenta de nuevo.");
+            }
+        }
+
+        // 3. Mostrar el resultado final solo cuando la edad sea válida
         System.out.println("Hola " + nombre + ". Tienes " + edad + " años. Esto es una prueba");
 
         lector.close();
